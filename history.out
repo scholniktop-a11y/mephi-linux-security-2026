@@ -29,3 +29,35 @@
    29  exit
    30  history -a
    31  history > ~/history.out
+   32  wc -l ~/history.out
+   33  exit
+   34  rm -f /tmp/captest
+   35  touch /tmp/captest
+   36  /home/user1/mychowncap root:root /tmp/captest
+   37  ls -l /tmp/captest
+   38  exit
+   39  /home/user1/mychowncap root:root /tmp/myfile_user1
+   40  ls -l /tmp/myfile_user1
+   41  exit
+   42  date
+   43  sudo timedatectl set-ntp false
+   44  sudo timedatectl set-time "2026-10-04 12:00:00"
+   45  date
+   46  sudo timedatectl set-ntp true
+   47  exit
+   48  id
+   49  whoami
+   50  ls -la /home/user1/mycatsetuid
+   51  ls -la /home/user1/mychowncap
+   52  getcap /home/user1/mychowncap
+   53  exit
+   54  sudo -i
+   55  cat /home/user1/history.out
+   56  exit
+   57  id
+   58  whoami
+   59  ls -la /home/user1/mycatsetuid
+   60  ls -la /home/user1/mychowncap
+   61  getcap /home/user1/mychowncap
+   62  history -a
+   63  history > ~/history.out
