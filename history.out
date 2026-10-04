@@ -38,3 +38,14 @@
    38  stat /home/user1/mychowncap
    39  history -a
    40  history > ~/history.out
+   41  wc -l ~/history.out
+   42  tail -15 ~/history.out
+   43  cd ~/mephi-linux-security-2026
+   44  sudo cp /home/user1/history.out ./history.out
+   45  sudo chown kokos:kokos ./history.out
+   46  ls -la history.out
+   47  wc -l history.out
+   48  git status
+   49  exit
+   50  history -a
+   51  history > ~/history.out
