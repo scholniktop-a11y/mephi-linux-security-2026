@@ -1,63 +1,40 @@
-    1  exit
-    2  history > ~/history.out
-    3  stat /home/user1 > ~/stat.out
-    4  stat /home/user1/mycatsetuid >> ~/stat.out
-    5  stat /home/user1/mychowncap >> ~/stat.out
-    6  getcap /home/user1/mychowncap > ~/getcap.out
-    7  find / -perm -4000 -type f 2>/dev/null > ~/setuid_files.out
-    8  ps -eo pid,ruid,euid,user,comm,args --sort=pid | awk '$3==0 && $2!=0' > ~/euid_root_processes.out
-    9  sudo cp /etc/passwd ~/passwd.out
-   10  sudo cp /etc/group ~/group.out
-   11  sudo cp /etc/sudoers ~/sudoers.out
-   12  sudo cp /etc/sudoers.d/user1_time ~/user1_time.sudoers
-   13  # shadow лучше не публиковать с реальными хэшами
-   14  sudo awk -F: 'BEGIN{OFS=":"} {$2="x"; print}' /etc/shadow > ~/shadow.redacted.out
-   15  sudo -i
-   16  1234
-   17  sudo -l
-   18  sudo timedatectl set-ntp false
-   19  sudo timedatectl set-time "2026-10-03 12:00:00"
-   20  date
-   21  sudo timedatectl set-ntp true
-   22  exit
-   23  history -a
-   24  history > ~/history.out
-   25  exit
-   26  su - user1
-   27  history -a           # сбросить буфер в файл истории
-   28  history > ~/history.out
+    1  id
+    2  whoami
+    3  getent group students
+    4  chage -l user1
+    5  ls -la /home/user1/mycatsetuid
+    6  ls -la /home/user1/mychowncap
+    7  getcap /home/user1/mychowncap
+    8  stat /home/user1/mycatsetuid
+    9  stat /home/user1/mychowncap
+   10  sudo -l
+   11  id
+   12  whoami
+   13  getent group students
+   14  chage -l user1
+   15  ls -la /home/user1/mycatsetuid
+   16  ls -la /home/user1/mychowncap
+   17  getcap /home/user1/mychowncap
+   18  stat /home/user1/mycatsetuid
+   19  stat /home/user1/mychowncap
+   20  sudo -l
+   21  exit
+   22  cd ~/mephi-linux-security-2026
+   23  sudo cp /home/user1/history.out ./history.out
+   24  sudo chown kokos:kokos ./history.out
+   25  git status
+   26  git add history.out
+   27  git commit -m "Update history"
+   28  git push
    29  exit
-   30  history -a
-   31  history > ~/history.out
-   32  wc -l ~/history.out
-   33  exit
-   34  rm -f /tmp/captest
-   35  touch /tmp/captest
-   36  /home/user1/mychowncap root:root /tmp/captest
-   37  ls -l /tmp/captest
-   38  exit
-   39  /home/user1/mychowncap root:root /tmp/myfile_user1
-   40  ls -l /tmp/myfile_user1
-   41  exit
-   42  date
-   43  sudo timedatectl set-ntp false
-   44  sudo timedatectl set-time "2026-10-04 12:00:00"
-   45  date
-   46  sudo timedatectl set-ntp true
-   47  exit
-   48  id
-   49  whoami
-   50  ls -la /home/user1/mycatsetuid
-   51  ls -la /home/user1/mychowncap
-   52  getcap /home/user1/mychowncap
-   53  exit
-   54  sudo -i
-   55  cat /home/user1/history.out
-   56  exit
-   57  id
-   58  whoami
-   59  ls -la /home/user1/mycatsetuid
-   60  ls -la /home/user1/mychowncap
-   61  getcap /home/user1/mychowncap
-   62  history -a
-   63  history > ~/history.out
+   30  id
+   31  whoami
+   32  getent group students
+   33  chage -l user1
+   34  ls -la /home/user1/mycatsetuid
+   35  ls -la /home/user1/mychowncap
+   36  getcap /home/user1/mychowncap
+   37  stat /home/user1/mycatsetuid
+   38  stat /home/user1/mychowncap
+   39  history -a
+   40  history > ~/history.out
