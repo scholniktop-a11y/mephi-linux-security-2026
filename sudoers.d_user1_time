@@ -1,0 +1,1 @@
+user1 ALL=(root) /usr/bin/timedatectl set-time *, /usr/bin/timedatectl set-ntp *, /usr/bin/date -s *
